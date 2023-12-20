@@ -3,6 +3,7 @@
 namespace Product;
 public class ProductSet
 {
+    // koondab erinevad productype-s 
     public string Name { get; set; }
 
     public ProductSet(string name) 
