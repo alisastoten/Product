@@ -36,8 +36,8 @@ class Program
 
         // Create ProductInstances with prices
         ProductInstance instance1 = new ProductInstance(TypeAudiA6, new Price(49999, DateTime.Now, DateTime.Now.AddYears(1)));
-        ProductInstance instance2 = new ProductInstance(TypeAudiA6, new Price(51999, DateTime.Now, DateTime.Now.AddYears(1)));
-        ProductInstance instance3 = new ProductInstance(TypeAudiA6, new Price(59999, DateTime.Now, DateTime.Now.AddYears(1)));
+        ProductInstance instance2 = new ProductInstance(TypeAudiA6, new Price(51999, DateTime.Now.AddYears(1), DateTime.Now.AddYears(2)));
+        ProductInstance instance3 = new ProductInstance(TypeAudiA6, new Price(59999, DateTime.Now.AddYears(2), DateTime.Now.AddYears(3)));
 
         // Add instances to the product type
         TypeAudiA6.AddInstance(instance1);
@@ -54,8 +54,6 @@ class Program
             Console.WriteLine($"Price: {price.Amount}");
         }
 
-        Console.Write("\n-----------------------");
-
-
+        Console.Write("\n-----------------------\n");
     }
 }

@@ -5,7 +5,7 @@ namespace Product;
 public class ProductType
 {
     public string Name { get; set; }
-    public string Description { get; set; }
+    private string Description { get; set; }
     private ProductIdentifier productIdentifier; // Muutuja ProductIdentifier objekti hoidmiseks
     private List<Price> prices;
 
