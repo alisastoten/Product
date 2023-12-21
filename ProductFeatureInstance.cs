@@ -3,7 +3,7 @@
 public class ProductFeatureInstance
 {
     public object Value { get; set; }
-    private ProductFeatureType featureType;
+    public ProductFeatureType featureType;
 
     public ProductFeatureInstance(ProductFeatureType featureType, object value)
     {

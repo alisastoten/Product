@@ -1,6 +1,6 @@
 ﻿namespace Product;
 
-public class ProductFeatureType // color, tiretype
+public class ProductFeatureType 
 {
     public string Name { get; set; }
     public List<object> PossibleValues { get; private set; } 

@@ -2,29 +2,27 @@
 
 namespace Product;
 
-public class ProductType
+public class ProductType : ProductIdentifier
 {
     public string Name { get; set; }
-    private string Description { get; set; }
-    private ProductIdentifier productIdentifier; // Muutuja ProductIdentifier objekti hoidmiseks
+    public string Description { get; set; }
     private List<Price> prices;
 
-    public ProductType(string name, string description, string identifier)
+    public ProductType(string name, string description)
     {
         Name = name;
         Description = description;
-        productIdentifier = new ProductIdentifier(identifier); // Loome uue ProductIdentifier objekti
         prices = new List<Price>();
+    }
+
+    public string? GetIdentifier()
+    {
+        return Name;
     }
 
     public string GetProductDetails()
     {
         return $"Product type is {Name}, Description is:\n{Description}";
-    }
-
-    public ProductIdentifier GetProductIdentifier()
-    {
-        return productIdentifier; // Tagastame ProductIdentifier objekti
     }
 
     public void AddPrice(Price price)
@@ -35,25 +33,5 @@ public class ProductType
     public List<Price> GetPrices()
     {
         return prices;
-    }
-
-    private List<ProductInstance> instances = new List<ProductInstance>();
-
-    public void AddInstance(ProductInstance instance)
-    {
-        instances.Add(instance);
-    }
-
-    public List<Price> GetAllInstancePrices()
-    {
-        List<Price> allPrices = new List<Price>();
-        foreach (var instance in instances)
-        {
-            if (instance.InstancePrice != null)
-            {
-                allPrices.Add(instance.InstancePrice);
-            }
-        }
-        return allPrices;
     }
 }
