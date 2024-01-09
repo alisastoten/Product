@@ -1,8 +1,6 @@
-﻿using System.Diagnostics;
+﻿namespace Product;
 
-namespace Product;
-
-public class ProductType : ProductIdentifier
+public class ProductType : IProductIdentifier
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -15,7 +13,7 @@ public class ProductType : ProductIdentifier
         prices = new List<Price>();
     }
 
-    public string? GetIdentifier()
+    public string GetIdentifier()
     {
         return Name;
     }

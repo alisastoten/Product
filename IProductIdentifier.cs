@@ -1,4 +1,4 @@
-﻿public interface ProductIdentifier
+﻿public interface IProductIdentifier
 {
     public string? GetIdentifier();
 }

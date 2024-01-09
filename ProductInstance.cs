@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Xml.Linq;
 
-public class ProductInstance : ProductIdentifier
+public class ProductInstance : IProductIdentifier
 {
     public ProductType ProductType { get; set; }
     public List<ProductFeatureInstance> Features { get; }
